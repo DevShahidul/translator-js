@@ -25,7 +25,7 @@
          $("#translator-input").on("keyup change", function(e) {
             var inputText = $(this).val();
             console.log($(this).val());
-            outputBox.html(inputText)
+            
             
             var settings = {
                "url": `https://translate.googleapis.com/translate_a/single?client=gtx&sl=es&tl=en&dt=t&q=${inputText}`,
@@ -35,8 +35,10 @@
             };
 
             $.ajax(settings).done(function (response) {
-               var res = JSON.parse(response);
-               console.log(response);
+               var translatedText = response[0][0][0];
+               outputBox.html(translatedText);
+               //var res = JSON.parse(response);
+               console.log(translatedText);
             });
          })
 
