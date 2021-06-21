@@ -52,3 +52,7 @@
    display: block;
    color: rgba(0, 0, 0, .4);
 }
+
+.translator-output.active{
+   color: rgba(0, 0, 0, 1);
+}
